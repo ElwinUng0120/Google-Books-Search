@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import API from '../utils/API';
 import Navbar from '../components/Navbar';
 import Logo from '../components/Logo';
@@ -7,11 +7,19 @@ import Results from '../components/Results';
 
 function Search(){
 
-    const API_KEY = API.getAPIKEY();
+    const [API_KEY, setAPI_KEY] = useState('');
     
     const [input, setInput] = useState('');
     const [result, setResult] = useState([]);
 
+    useEffect(function(){
+        getAPIKEY();
+    }, []);
+
+    async function getAPIKEY(){
+        const response = await API.getAPIKEY();
+        setAPI_KEY(response);
+    }
 
     function handleInputChange(event){
         const value = event.target.value;
