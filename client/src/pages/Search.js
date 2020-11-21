@@ -18,6 +18,7 @@ function Search(){
 
     async function getAPIKEY(){
         const response = await API.getAPIKEY();
+        console.log(response);
         setAPI_KEY(response);
     }
 
