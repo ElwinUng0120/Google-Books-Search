@@ -34,7 +34,7 @@ function Search(){
             <div className="container">
                 <Searchbar input={input} handleInputChange={handleInputChange} handleBtnClicked={handleBtnClicked} />
                 <br/>
-                <Results data={result}/>
+                {result.length === 0 ? <h1 style={{textAlign: 'center'}}>You haven't search for anything yet.</h1> : <Results data={result}/>}
             </div>
         </>
     );

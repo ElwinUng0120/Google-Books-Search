@@ -14,8 +14,9 @@ function ResultCard(props){
             description: book.volumeInfo.description,
             image: book.volumeInfo.imageLinks.thumbnail,
             link: book.volumeInfo.infoLink
-        });
+        }).catch(err => console.log(err));
         console.log(response);
+        alert(`BookID: ${book.id} saved`);
     }
     if(book){
         return (
