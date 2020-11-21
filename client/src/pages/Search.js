@@ -7,10 +7,11 @@ import Results from '../components/Results';
 
 function Search(){
 
-    const API_KEY = 'AIzaSyA3c_cZv61y9qyOqu_EZWHjd3ElLcoZOwE';
+    const API_KEY = API.getAPIKEY();
     
     const [input, setInput] = useState('');
     const [result, setResult] = useState([]);
+
 
     function handleInputChange(event){
         const value = event.target.value;
